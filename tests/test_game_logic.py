@@ -85,14 +85,16 @@ def test_initial_attempts_is_zero():
 # --- Bug fix: history and status reset on new game ---
 
 def test_new_game_resets_history():
-    session_state = {"history": [10, 20, 30], "status": "lost", "attempts": 8}
+    session_state = {"history": [10, 20, 30], "status": "lost", "attempts": 8, "score": 95}
     # Simulate new game button logic
     session_state["attempts"] = 0
     session_state["status"] = "playing"
     session_state["history"] = []
+    session_state["score"] = 0
     assert session_state["history"] == []
     assert session_state["status"] == "playing"
     assert session_state["attempts"] == 0
+    assert session_state["score"] == 0
 
 
 # --- parse_guess: type error fix (string vs int coercion) ---
