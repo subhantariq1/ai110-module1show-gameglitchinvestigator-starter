@@ -38,9 +38,8 @@ The game is to guess a number and you're supposed to guess it within the alloted
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
-      ![Guess Game Demo](/GameDemo.png)
-
+- [x] [Insert a screenshot of your fixed, winning game here]
+      ![Guess Game Demo](GameDemo.png)
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
