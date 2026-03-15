@@ -16,6 +16,7 @@ difficulty = st.sidebar.selectbox(
 )
 
 attempt_limit_map = {
+# FIX ME: The attempt limits are not balanced for the difficulty levels. Easy should have more attempts than Normal, and Normal should have more than Hard.
     "Easy": 6,
     "Normal": 8,
     "Hard": 5,
@@ -31,7 +32,7 @@ if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 1 # FIX ME: The attempts should start at 0, not 1, since the player hasn't made any guesses yet.
 
 if "score" not in st.session_state:
     st.session_state.score = 0
@@ -45,7 +46,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between 1 and 100. " # FIX ME: The range should be dynamic based on the selected difficulty, not hardcoded to 1-100.
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -64,9 +65,10 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(1, 100) # FIX ME: The new game should generate a new secret number within the correct range for the selected difficulty, not always between 1 and 100.
     st.session_state.status = "playing"
     st.session_state.history = []
+    # Add score reset for new game
     st.success("New game started.")
     st.rerun()
 
