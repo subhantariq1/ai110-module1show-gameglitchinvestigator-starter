@@ -16,8 +16,7 @@ difficulty = st.sidebar.selectbox(
 )
 
 attempt_limit_map = {
-# FIX ME: The attempt limits are not balanced for the difficulty levels. Easy should have more attempts than Normal, and Normal should have more than Hard.
-    "Easy": 6,
+    "Easy": 12,
     "Normal": 8,
     "Hard": 5,
 }
